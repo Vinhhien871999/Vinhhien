@@ -43,7 +43,6 @@
             this.dtpngaytra = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtmaphieu = new System.Windows.Forms.TextBox();
-            this.txtmaphieumuon = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btntatca = new System.Windows.Forms.Button();
             this.txttinhtrang = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.cbp_chon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbmaphieumuon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvphieutra)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -230,17 +230,10 @@
             this.txtmaphieu.Size = new System.Drawing.Size(280, 30);
             this.txtmaphieu.TabIndex = 1;
             // 
-            // txtmaphieumuon
-            // 
-            this.txtmaphieumuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmaphieumuon.Location = new System.Drawing.Point(206, 93);
-            this.txtmaphieumuon.Name = "txtmaphieumuon";
-            this.txtmaphieumuon.Size = new System.Drawing.Size(280, 30);
-            this.txtmaphieumuon.TabIndex = 3;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cbbmaphieumuon);
             this.panel1.Controls.Add(this.btntatca);
             this.panel1.Controls.Add(this.txttinhtrang);
             this.panel1.Controls.Add(this.label7);
@@ -254,7 +247,6 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtmaphieu);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtmaphieumuon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -322,6 +314,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Phiếu Trả";
             // 
+            // cbbmaphieumuon
+            // 
+            this.cbbmaphieumuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbmaphieumuon.FormattingEnabled = true;
+            this.cbbmaphieumuon.Location = new System.Drawing.Point(207, 89);
+            this.cbbmaphieumuon.Name = "cbbmaphieumuon";
+            this.cbbmaphieumuon.Size = new System.Drawing.Size(280, 33);
+            this.cbbmaphieumuon.TabIndex = 23;
+            this.cbbmaphieumuon.Click += new System.EventHandler(this.cbbmaphieumuon_Click);
+            // 
             // FormPhieuTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,7 +355,6 @@
         private System.Windows.Forms.DateTimePicker dtpngaytra;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtmaphieu;
-        private System.Windows.Forms.TextBox txtmaphieumuon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
@@ -367,5 +368,6 @@
         private System.Windows.Forms.TextBox txttinhtrang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btntatca;
+        private System.Windows.Forms.ComboBox cbbmaphieumuon;
     }
 }

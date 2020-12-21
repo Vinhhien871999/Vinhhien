@@ -33,7 +33,7 @@ namespace ThuVien
         private void clearData()
         {
             txtmaphieu.Text = "";
-            txtmaphieumuon.Text = "";
+            cbbmaphieumuon.Text = "";
             dtpngaytra.Refresh();
             dtpngaytra.Refresh();
         }
@@ -73,7 +73,7 @@ namespace ThuVien
             if (dr == DialogResult.Yes)
             {
                 string ngaytra = convertToDateSQL(dtpngaytra.Value.ToString("dd/MM/yyy"));
-                myPT = new Models.Phieutra(txtmaphieu.Text, txtmaphieumuon.Text,ngaytra, txttinhtrang.Text);
+                myPT = new Models.Phieutra(txtmaphieu.Text, cbbmaphieumuon.Text,ngaytra, txttinhtrang.Text);
                 var i = myPT.DeletePhieutra();
                 if (i > 0)
                 {
@@ -91,14 +91,14 @@ namespace ThuVien
             if (btnSVHuy.Tag.ToString() == "Them")
             {
                 txtmaphieu.Text = "";
-                txtmaphieumuon.Text = "";
+                cbbmaphieumuon.Text = "";
                 dtpngaytra.Refresh();
                 txttinhtrang.Text = "";
             }
             if (btnSVHuy.Tag.ToString() == "Sua")
             {
                 txtmaphieu.Text = "";
-                txtmaphieumuon.Text = "";
+                cbbmaphieumuon.Text = "";
                 dtpngaytra.Refresh();
                 txttinhtrang.Text = "";
             }
@@ -110,7 +110,7 @@ namespace ThuVien
             if (btnSVLuu.Tag.ToString() == "Them")
             {
                 string ngaytra = convertToDateSQL(dtpngaytra.Value.ToString("dd/MM/yyy"));
-                myPT = new Models.Phieutra(txtmaphieu.Text, txtmaphieumuon.Text, ngaytra, txttinhtrang.Text);
+                myPT = new Models.Phieutra(txtmaphieu.Text, cbbmaphieumuon.Text, ngaytra, txttinhtrang.Text);
                 var i = myPT.InsertPhieutra();
                 if (i == 0)
                 {
@@ -125,7 +125,7 @@ namespace ThuVien
             if (btnSVLuu.Tag.ToString() == "Sua")
             {
                 string ngaytra = convertToDateSQL(dtpngaytra.Value.ToString("dd/MM/yyy"));
-                myPT = new Models.Phieutra(txtmaphieu.Text, txtmaphieumuon.Text, ngaytra, txttinhtrang.Text);
+                myPT = new Models.Phieutra(txtmaphieu.Text, cbbmaphieumuon.Text, ngaytra, txttinhtrang.Text);
                 var i = myPT.UpdatePhieutra();
                 if (i == 0)
                 {
@@ -145,7 +145,7 @@ namespace ThuVien
             if (index >= 0)
             {
                 txtmaphieu.Text = dgvphieutra.Rows[index].Cells["MaPhieuTra"].Value.ToString();
-                txtmaphieumuon.Text = dgvphieutra.Rows[index].Cells["MaPhieuMuon"].Value.ToString();
+                cbbmaphieumuon.Text = dgvphieutra.Rows[index].Cells["MaPhieuMuon"].Value.ToString();
                 dtpngaytra.Text = dgvphieutra.Rows[index].Cells["NgayTra"].Value.ToString();
                 txttinhtrang.Text = dgvphieutra.Rows[index].Cells["TinhTrang"].Value.ToString();
             }
@@ -195,6 +195,12 @@ namespace ThuVien
             dgvphieutra.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dgvphieutra.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvphieutra.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void cbbmaphieumuon_Click(object sender, EventArgs e)
+        {
+            cbbmaphieumuon.DataSource = Models.Phieutra.listdangmuon();
+            cbbmaphieumuon.DisplayMember = "MaPhieuMuon";
         }
     }
 }

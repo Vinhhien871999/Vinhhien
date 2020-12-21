@@ -43,8 +43,6 @@
             this.btnSVLuu = new System.Windows.Forms.Button();
             this.btnSVThem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtmasach = new System.Windows.Forms.TextBox();
-            this.txtmadocgia = new System.Windows.Forms.TextBox();
             this.dtpngaymuon = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.txtmaphieu = new System.Windows.Forms.TextBox();
@@ -57,6 +55,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbmasach = new System.Windows.Forms.ComboBox();
+            this.cbmadocgia = new System.Windows.Forms.ComboBox();
             this.btntatca = new System.Windows.Forms.Button();
             this.txttinhtrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,8 +70,6 @@
             // dgvphieumuon
             // 
             this.dgvphieumuon.AllowUserToAddRows = false;
-            this.dgvphieumuon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvphieumuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvphieumuon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhieuMuon,
@@ -80,6 +78,7 @@
             this.NgayMuon,
             this.NgayPhaiTra,
             this.TinhTrang});
+            this.dgvphieumuon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvphieumuon.Location = new System.Drawing.Point(0, 254);
             this.dgvphieumuon.Name = "dgvphieumuon";
             this.dgvphieumuon.RowHeadersWidth = 51;
@@ -243,20 +242,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Mã Sách";
             // 
-            // txtmasach
-            // 
-            this.txtmasach.Location = new System.Drawing.Point(206, 141);
-            this.txtmasach.Name = "txtmasach";
-            this.txtmasach.Size = new System.Drawing.Size(280, 22);
-            this.txtmasach.TabIndex = 5;
-            // 
-            // txtmadocgia
-            // 
-            this.txtmadocgia.Location = new System.Drawing.Point(206, 93);
-            this.txtmadocgia.Name = "txtmadocgia";
-            this.txtmadocgia.Size = new System.Drawing.Size(280, 22);
-            this.txtmadocgia.TabIndex = 3;
-            // 
             // dtpngaymuon
             // 
             this.dtpngaymuon.Location = new System.Drawing.Point(745, 40);
@@ -357,6 +342,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cbbmasach);
+            this.panel1.Controls.Add(this.cbmadocgia);
             this.panel1.Controls.Add(this.btntatca);
             this.panel1.Controls.Add(this.txttinhtrang);
             this.panel1.Controls.Add(this.label7);
@@ -372,14 +359,30 @@
             this.panel1.Controls.Add(this.txtmaphieu);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dtpngaymuon);
-            this.panel1.Controls.Add(this.txtmadocgia);
-            this.panel1.Controls.Add(this.txtmasach);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1382, 254);
             this.panel1.TabIndex = 12;
+            // 
+            // cbbmasach
+            // 
+            this.cbbmasach.FormattingEnabled = true;
+            this.cbbmasach.Location = new System.Drawing.Point(207, 138);
+            this.cbbmasach.Name = "cbbmasach";
+            this.cbbmasach.Size = new System.Drawing.Size(280, 24);
+            this.cbbmasach.TabIndex = 25;
+            this.cbbmasach.Click += new System.EventHandler(this.cbbmasach_Click);
+            // 
+            // cbmadocgia
+            // 
+            this.cbmadocgia.FormattingEnabled = true;
+            this.cbmadocgia.Location = new System.Drawing.Point(206, 93);
+            this.cbmadocgia.Name = "cbmadocgia";
+            this.cbmadocgia.Size = new System.Drawing.Size(280, 24);
+            this.cbmadocgia.TabIndex = 24;
+            this.cbmadocgia.Click += new System.EventHandler(this.cbmadocgia_Click);
             // 
             // btntatca
             // 
@@ -445,8 +448,6 @@
         private System.Windows.Forms.DataGridView dgvphieumuon;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtmasach;
-        private System.Windows.Forms.TextBox txtmadocgia;
         private System.Windows.Forms.DateTimePicker dtpngaymuon;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtmaphieu;
@@ -475,5 +476,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayPhaiTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.ComboBox cbbmasach;
+        private System.Windows.Forms.ComboBox cbmadocgia;
     }
 }

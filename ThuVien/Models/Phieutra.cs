@@ -59,5 +59,9 @@ namespace ThuVien.Models
                 CommandType.StoredProcedure, new string[1] { "@deletephieutra" }, new object[1] { MaPhieuTra });
             return i;
         }
+        public static DataTable listdangmuon()
+        {
+            return Models.Connection.getData("dangmuon", CommandType.StoredProcedure);
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace ThuVien.Models
         }
         public int Insertphieumuon()
         {
-            string[] paras = new string[6] { "@MaPhieu", "@MaDocGia", "@MaSach", "@NgayMuon", "@NgayPhaiTra", "@TinhTrang" };
+            string[] paras = new string[6] { "@MaPhieuMuon", "@MaDocGia", "@MaSach", "@NgayMuon", "@NgayPhaiTra", "@TinhTrang" };
             object[] values = new object[6] { MaPhieu, MaDocGia, MaSach, Ngaymuon, NgayTra, TinhTrang };
             var i = Models.Connection.ExcuteQuery("addphieumuon",
                 CommandType.StoredProcedure, paras, values);
@@ -55,7 +55,7 @@ namespace ThuVien.Models
         }
         public int Updatephieumuon()
         {
-            string[] paras = new string[6] { "@MaPhieu", "@MaDocGia", "@MaSach", "@NgayMuon", "@NgayPhaiTra", "@TinhTrang" };
+            string[] paras = new string[6] { "@MaPhieuMuon", "@MaDocGia", "@MaSach", "@NgayMuon", "@NgayPhaiTra", "@TinhTrang" };
             object[] values = new object[6] { MaPhieu, MaDocGia, MaSach, Ngaymuon, NgayTra, TinhTrang };
             var i = Models.Connection.ExcuteQuery("editphieumuon",
                 CommandType.StoredProcedure, paras, values);
@@ -65,12 +65,20 @@ namespace ThuVien.Models
         public int Deletephieumuon()
         {
             var i = Models.Connection.ExcuteQuery("deletephieumuon",
-                CommandType.StoredProcedure, new string[1] { "@MaPhieu" }, new object[1] { MaPhieu });
+                CommandType.StoredProcedure, new string[1] { "@MaPhieuMuon" }, new object[1] { MaPhieu });
             return i;
         }
         public static DataTable getTable_dangmuon()
         {
             return Models.Connection.getData("Dangmuon()", CommandType.StoredProcedure);
+        }
+        public static DataTable listmadocgia()
+        {
+            return Models.Connection.getData("ListMaDocGia", CommandType.StoredProcedure);
+        }
+        public static DataTable listmasach()
+        {
+            return Models.Connection.getData("ListMaSach", CommandType.StoredProcedure);
         }
     }
 }

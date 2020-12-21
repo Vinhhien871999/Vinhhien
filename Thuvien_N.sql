@@ -437,4 +437,25 @@ BEGIN
 END
 GO
 
-select * from TaiKhoan
+create proc ListMaDocGia
+as
+	begin
+		select MaDocGia from DocGia
+	end
+go
+create proc ListMaSach
+as
+	begin
+		select masach from Sach
+	end
+go
+
+create proc dangmuon
+as
+	begin
+		select pm.MaPhieuMuon,dg.HoTen,pm.MaSach,pm.NgayMuon,pm.NgayPhaiTra,TinhTrang from phieumuon as pm,DocGia as dg
+		where dg.MaDocGia = pm.MaDocGia and pm.MaPhieuMuon not in
+		(select pt.MaPhieuMuon from PhieuTra as pt
+		where pm.MaPhieuMuon = pt.MaPhieuMuon)
+	end
+go
